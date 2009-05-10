@@ -1,0 +1,7 @@
+h1. {{GEM_NAME}}
+
+h2. Installation
+
+<pre>sudo gem install {{GEM_NAME_FULL}}</pre>
+
+Copyright (c) {{AUTHOR_NAME}}, released under the MIT-license.

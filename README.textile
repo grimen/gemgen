@@ -1,0 +1,19 @@
+h1. GEM-GEN
+
+A very basic Ruby gem skeleton generator empowered by Jeweler. Fits most needs.
+
+h2. Installation
+
+<pre>sudo gem install grimen-gemgen</pre>
+
+h2. Usage
+
+Example:
+
+<pre>gemgen my_cool_gem grimen grimen@gmail.com 'Jonas Grimfelt'</pre>
+
+...or more general:
+
+<pre>gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] ['AUTHOR_EMAIL'] ['AUTHOR_FULL_NAME']</pre>
+
+Copyright (c) Jonas Grimfelt, released under the MIT-license.

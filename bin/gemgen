@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+DIRS = %w(bin lib test tasks rails).freeze
+TEMPLATE_FILES = [
+    'MIT-LICENSE',
+    'Rakefile',
+    'README.textile',
+    File.join('lib', 'GEM_NAME.rb'),
+    File.join('test', 'GEM_NAME_test.rb'),
+    File.join('tasks', 'GEM_NAME.rake'),
+    File.join('rails', 'init.rb')
+  ].freeze
+  
+begin
+  raise if ARGV.size == 0
+  
+  gem_name = ARGV[0].strip
+  gem_author_alias = ARGV[1].strip rescue 'grimen'
+  gem_author_name = ARGV[2].strip rescue gem_author_alias
+  gem_author_email = ARGV[3].strip rescue 'grimen@gmail.com'
+  gem_name_full = "#{gem_author_alias}-#{gem_name}"
+  
+  new_gem_path = File.join(FileUtils.pwd, gem_name)
+  templates_path = File.expand_path(File.join(File.dirname(__FILE__), '..', 'templates'))
+  
+  FileUtils.mkdir(new_gem_path)
+  
+  # Generate directories.
+  DIRS.each do |directory|
+    FileUtils.mkdir(File.join(new_gem_path, directory))
+  end
+  
+  # Generate files from templates.
+  TEMPLATE_FILES.each do |file|
+    FileUtils.cp(File.join(templates_path, file),
+      File.join(new_gem_path, file.gsub('GEM_NAME', gem_name)))
+  end
+  
+  # Replace placeholder constants in the generated files with proper values.
+  TEMPLATE_FILES.each do |file|
+    new_file = File.join(new_gem_path, file.gsub('GEM_NAME', gem_name))
+    file_source = File.read(new_file)
+    file_source.gsub!('{{GEM_NAME}}', gem_name)
+    file_source.gsub!('{{GEM_NAME_FULL}}', gem_name_full)
+    file_source.gsub!('{{AUTHOR_ALIAS}}', gem_author_alias)
+    file_source.gsub!('{{AUTHOR_NAME}}', gem_author_name)
+    file_source.gsub!('{{AUTHOR_EMAIL}}', gem_author_email)
+    File.open(new_file, 'wb') { |f| f.write(file_source) }
+  end
+rescue
+  puts "USAGE: gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] ['AUTHOR_EMAIL'] ['AUTHOR_FULL_NAME']"
+end
