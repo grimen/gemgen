@@ -20,6 +20,7 @@ begin
   gem_author_alias = ARGV[1].strip rescue 'grimen'
   gem_author_name = ARGV[2].strip rescue gem_author_alias
   gem_author_email = ARGV[3].strip rescue 'grimen@gmail.com'
+  gem_copyright_year = ARGV[4].strip rescue Time.now.year
   gem_name_full = "#{gem_author_alias}-#{gem_name}"
   
   new_gem_path = File.join(FileUtils.pwd, gem_name)
@@ -47,6 +48,7 @@ begin
     file_source.gsub!('{{AUTHOR_ALIAS}}', gem_author_alias)
     file_source.gsub!('{{AUTHOR_NAME}}', gem_author_name)
     file_source.gsub!('{{AUTHOR_EMAIL}}', gem_author_email)
+    file_source.gsub!('{{YEAR}}', gem_copyright_year)
     File.open(new_file, 'wb') { |f| f.write(file_source) }
   end
 rescue
