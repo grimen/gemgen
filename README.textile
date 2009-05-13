@@ -10,10 +10,10 @@ h2. Usage
 
 Example:
 
-<pre>gemgen my_cool_gem grimen grimen@gmail.com 'Jonas Grimfelt'</pre>
+<pre>gemgen my_cool_gem grimen grimen@gmail.com 'Jonas Grimfelt' 2008-2009</pre>
 
 ...or more general:
 
-<pre>gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] ['AUTHOR_EMAIL'] ['AUTHOR_FULL_NAME']</pre>
+<pre>gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] [AUTHOR_EMAIL] ['AUTHOR_FULL_NAME'] [COPYRIGHT_YEAR(S)]</pre>
 
 Copyright (c) Jonas Grimfelt, released under the MIT-license.
