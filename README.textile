@@ -1,6 +1,6 @@
 h1. GEM-GEN
 
-A very basic Ruby gem skeleton generator empowered by Jeweler. Fits most needs.
+_A very basic Ruby gem skeleton generator empowered by Jeweler. Fits most needs._
 
 h2. Installation
 
