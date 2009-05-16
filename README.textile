@@ -16,4 +16,6 @@ Example:
 
 <pre>gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] [AUTHOR_EMAIL] ['AUTHOR_FULL_NAME'] [COPYRIGHT_YEAR(S)]</pre>
 
+h2. License
+
 Copyright (c) Jonas Grimfelt, released under the MIT-license.

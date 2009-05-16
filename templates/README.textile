@@ -4,4 +4,6 @@ h2. Installation
 
 <pre>sudo gem install {{GEM_NAME_FULL}}</pre>
 
+h2. License
+
 Copyright (c) {{AUTHOR_NAME}}, released under the MIT-license.

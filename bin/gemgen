@@ -7,6 +7,7 @@ TEMPLATE_FILES = [
     'MIT-LICENSE',
     'Rakefile',
     'README.textile',
+    '.gitignore',
     File.join('lib', 'GEM_NAME.rb'),
     File.join('test', 'GEM_NAME_test.rb'),
     File.join('tasks', 'GEM_NAME.rake'),
@@ -51,6 +52,7 @@ begin
     file_source.gsub!('{{YEAR}}', gem_copyright_year)
     File.open(new_file, 'wb') { |f| f.write(file_source) }
   end
+  
 rescue
-  puts "USAGE: gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] ['AUTHOR_EMAIL'] ['AUTHOR_FULL_NAME']"
+  puts "USAGE: gemgen GEM_NAME [AUTHOR_GITHUB_ALIAS] [AUTHOR_EMAIL] ['AUTHOR_FULL_NAME'] [COPYRIGHT_YEAR()S]"
 end
