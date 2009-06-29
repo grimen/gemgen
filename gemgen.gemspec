@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonas Grimfelt"]
-  s.date = %q{2009-05-16}
+  s.date = %q{2009-06-29}
   s.default_executable = %q{gemgen}
   s.description = %q{Ruby gem skeleton generator.}
   s.email = %q{grimen@gmail.com}
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "README.textile",
     "Rakefile",
     "bin/gemgen",
+    "templates/.gitignore",
     "templates/MIT-LICENSE",
     "templates/README.textile",
     "templates/Rakefile",

@@ -20,7 +20,7 @@ begin
     gem.email = EMAIL
     
     gem.require_paths = %w{lib}
-    gem.files = SUPPORT_FILES + %w(MIT-LICENSE Rakefile) + Dir.glob(File.join('{bin,templates}', '**', '*'))
+    gem.files = SUPPORT_FILES + %w(MIT-LICENSE Rakefile) + Dir.glob([File.join('{bin,templates}', '**', '*'), File.join('templates', '**', '.[a-z]*')])
     gem.executables = %w(gemgen)
     gem.extra_rdoc_files = SUPPORT_FILES
   end
